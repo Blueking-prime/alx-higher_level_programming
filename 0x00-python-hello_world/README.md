@@ -1,0 +1,1 @@
+This is oour introduction to Python, well it's more of a refresher honestly
