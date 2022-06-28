@@ -4,20 +4,20 @@
 
 /**
  * check_cycle - checks if the list cycles
- * @h: pointer to head of list
+ * @list: pointer to head of list
  * Return: 1 or 0.
  */
 int check_cycle(listint_t *list)
 {
 	listint_t *hd = list;
-    listint_t *curr;
+	listint_t *curr;
 	int i = 0, j;
 	listint_t **list_of_nodes;
 
 	curr = hd;
-	while(curr->next != NULL)
+	while (curr->next != NULL)
 	{
-        curr = curr->next;
+		curr = curr->next;
 		i++;
 	}
 
@@ -29,9 +29,9 @@ int check_cycle(listint_t *list)
 
 	curr = hd;
 	i = 0;
-	while(curr->next != NULL)
+	while (curr->next != NULL)
 	{
-        curr = curr->next;
+		curr = curr->next;
 		list_of_nodes[i] = curr;
 	}
 
