@@ -9,43 +9,21 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *hd = list;
 	listint_t *curr;
-	int i = 0, j;
-	listint_t **list_of_nodes;
 
-	curr = hd;
-	while (curr->next != NULL)
-	{
-		curr = curr->next;
-		i++;
-	}
-
-	list_of_nodes = malloc(i * sizeof(listint_t));
-	if (list_of_nodes == NULL)
+	if (list == NULL)
 	{
 		return (0);
 	}
-
-	curr = hd;
-	i = 0;
+	curr = list;
 	while (curr->next != NULL)
 	{
-		curr = curr->next;
-		list_of_nodes[i] = curr;
-	}
-
-	for (i = 0; list_of_nodes[i] != NULL; i++)
-	{
-		for (j = 0; list_of_nodes[j] != NULL; j++)
+		if (curr->next == list)
 		{
-			if (i == j)
-				continue;
-			if (list_of_nodes[i] == list_of_nodes[j])
-				return (1);
+			return (1);
 		}
+		curr = curr->next;
 	}
-	free(list_of_nodes);
 
 	return (0);
 }
