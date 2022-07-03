@@ -19,4 +19,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
             l_b[j] = i
         j += 1
 
-    return (l_a[0] + l_b[0], l_a[1] + l_b[1])
+    return l_a[0] + l_b[0], l_a[1] + l_b[1]
