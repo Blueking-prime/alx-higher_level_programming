@@ -1,0 +1,1 @@
+This is a nice introduction to lists and tuples. But why wiuld any reasonable person use tuples in the first place?
