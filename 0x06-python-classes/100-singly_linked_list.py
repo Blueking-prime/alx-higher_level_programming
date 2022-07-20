@@ -39,6 +39,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    '''This Creates a linked list'''
     def __init__(self):
         '''The __init__ function
         inittalizes attributes'''
