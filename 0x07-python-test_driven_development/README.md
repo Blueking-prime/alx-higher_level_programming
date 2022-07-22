@@ -1,0 +1,1 @@
+So this is how they automate those tests?
