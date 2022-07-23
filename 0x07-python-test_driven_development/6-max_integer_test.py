@@ -6,7 +6,6 @@ finds the biggest integer in a list
 functions:
     max_integer
 '''
-
 def max_integer(list=[]):
     '''
     Finds th biggest integer in a list

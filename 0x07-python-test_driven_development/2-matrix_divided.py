@@ -24,15 +24,18 @@ def matrix_divided(matrix, div):
         raise TypeError('div must be a number')
     if div == 0:
         raise ZeroDivisionError('division by zero')
+
     try:
-        for i in matrix:
-            if len(i) != len(matrix[0]):
-                raise TypeError(err1)
-            for j in i:
-                if type(j) is not int and type(j) is not float:
-                    raise TypeError(err2)
-    except IndexError:
+        len(matrix[0]);
+    except TypeError:
         raise TypeError(err2)
+
+    for i in matrix:
+        if len(i) != len(matrix[0]):
+            raise TypeError(err1)
+        for j in i:
+            if type(j) is not int and type(j) is not float:
+                raise TypeError(err2)
 
     new_matrix = [x[:] for x in matrix]
     for i in range(len(new_matrix)):

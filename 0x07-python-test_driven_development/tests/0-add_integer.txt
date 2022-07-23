@@ -1,0 +1,42 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+First import:
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Now test it:
+    Test with 2 integers
+    >>> add_integer(6, 7)
+    13
+
+    Checks if return type is int
+    >>> type(add_integer(6, 7))
+    <class 'int'>
+
+    Test with only one integer
+    >>> add_integer(2)
+    100
+
+    Test with a string
+    >>> add_integer('f')
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    Test with any other type
+    >>> add_integer(6, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    Test with floats
+    >>> add_integer(6.89, 7.34)
+    13
+
+    Test with no input
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
