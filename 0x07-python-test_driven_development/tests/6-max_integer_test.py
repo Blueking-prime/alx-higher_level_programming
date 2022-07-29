@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Unittest for max_integer([..])
 """
 import unittest
@@ -5,6 +6,8 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+    """Define unit test for the max_integer function"""
+
     def regular_test(self):
         '''Tests normal use cases'''
         self.assertAlmostEqual(max_integer([1, 2, 3]), 3)
@@ -27,3 +30,6 @@ class TestMaxInteger(unittest.TestCase):
         '''Checks if program returns known type errors'''
         self.assertRaises(ValueError, max_integer, [8, 9, 'iu'])
         self.assertRaises(ValueError, max_integer, ['iu'])
+
+if __name__ == '__main__':
+    unittest.main()
