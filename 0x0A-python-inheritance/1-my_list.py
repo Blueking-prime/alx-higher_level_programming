@@ -8,7 +8,7 @@ class MyList(list):
     '''A subclass of list'''
     def print_sorted(self):
         '''Prints the list in ascending order'''
-        l = self[:]
+        l = list(self[:])
         l.sort()
         print(l)
 
