@@ -1,0 +1,1 @@
+Hmm, inheritance huh? Don't know what to expect

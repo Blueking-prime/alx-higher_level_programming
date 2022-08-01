@@ -1,0 +1,55 @@
+The ``1-my_list`` module
+======================
+
+Using ``MyList``
+-------------------
+
+First import:
+``MyList`` from the ``1-my_list`` module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Now test it:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+    >>> print(my_list.__doc__)
+    A subclass of list
+
+    >>> print(my_list.__dict__)
+    {}
+
+    >>> print(my_list.sort())
+    None
+
+    >>> my_list.append('l')
+    >>> print(my_list)
+    [1, 2, 3, 4, 5, 'l']
+
+    >>> my_list.append('a')
+    >>> print(my_list)
+    [1, 2, 3, 4, 5, 'l', 'a']
+
+    >>> my_list.append(78)
+    >>> print(my_list)
+    [1, 2, 3, 4, 5, 'l', 'a', 78]
+
+    >>> my_list.append('L')
+    >>> print(my_list)
+    [1, 2, 3, 4, 5, 'l', 'a', 78, 'L']
+
+    >>> my_list.skrr()
+    Traceback (most recent call last):
+    AttributeError: 'MyList' object has no attribute 'skrr'
