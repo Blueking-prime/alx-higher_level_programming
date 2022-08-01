@@ -40,10 +40,10 @@ class Rectangle(BaseGeometry):
         integer_validator
     '''
     def __init__(self, width, height):
-        self.integer_validator('width', width)
-        self.integer_validator('height', height)
         self.__width = width
         self.__height = height
+        self.integer_validator('width', width)
+        self.integer_validator('height', height)
 
     def __str__(self):
         return f'[{self.__class__.__name__}] {self.__width}/{self.__height}'
