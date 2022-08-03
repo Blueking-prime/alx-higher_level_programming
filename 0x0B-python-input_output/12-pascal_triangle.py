@@ -14,7 +14,7 @@ def f(n):
 def pascal_triangle(n):
     '''Creates Pascal's triangle'''
     if n <= 0:
-        return []
+        return [[]]
 
     triangle = []
 
@@ -23,7 +23,7 @@ def pascal_triangle(n):
         k = -1
         while i != k:
             k += 1
-            x = f(i)/ (f(k) * f(i-k))
+            x = f(i) / (f(k) * f(i - k))
             row.append(int(x))
         triangle.append(row)
 
