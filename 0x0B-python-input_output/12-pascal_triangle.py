@@ -14,7 +14,7 @@ def f(n):
 def pascal_triangle(n):
     '''Creates Pascal's triangle'''
     if n <= 0:
-        return [[]]
+        return []
 
     triangle = []
 
