@@ -26,5 +26,3 @@ def pascal_triangle(n):
             x = f(i) / (f(k) * f(i - k))
             row.append(int(x))
         triangle.append(row)
-
-    return triangle
