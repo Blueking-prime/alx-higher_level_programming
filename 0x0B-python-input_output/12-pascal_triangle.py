@@ -4,11 +4,12 @@ Returns a list of lists of integers representing pascal's triangle
 '''
 
 
-def factorial(n):
+def f(n):
     '''Calculates factorial'''
     if n <= 1:
         return 1
-    return n * factorial(n - 1)
+    return n * f(n - 1)
+
 
 def pascal_triangle(n):
     '''Creates Pascal's triangle'''
@@ -17,17 +18,13 @@ def pascal_triangle(n):
 
     triangle = []
 
-    for i in range(1, n + 1):
+    for i in range(0, n):
         row = []
-        k = 0
+        k = -1
         while i != k:
-            x = factorial(i) / (factorial(i) - factorial(k))
-            row.append(int(x))
             k += 1
+            x = f(i)/ (f(k) * f(i-k))
+            row.append(int(x))
         triangle.append(row)
 
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
-
-
-print((factorial(5) - factorial(2))/factorial(5-2))
+    return triangle
