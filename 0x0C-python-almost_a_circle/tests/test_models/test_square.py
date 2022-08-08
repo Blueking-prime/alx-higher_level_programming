@@ -106,7 +106,6 @@ class TestSquare(unittest.TestCase):
         r1.update(x=1, y=3, size=4, id=89)
         self.assertEqual(r1.__str__(), '[Square] (89) 1/3 - 4')
 
-
     def test_to_dictionary(self):
         '''Tests the to_dictionary function with multiple values'''
         r1 = Square(10, 1, 9)
@@ -126,7 +125,9 @@ class TestSquare(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Square.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
-        self.assertCountEqual(json_dictionary, '[{"x": 0, "size": 10, "id": 1, "y": 0}]')
+        self.assertCountEqual(
+            json_dictionary, '[{"x": 0, "size": 10, "id": 1, "y": 0}]'
+            )
 
     def test_to_json_string_full(self):
         '''Tests the to_json_string function'''
@@ -134,7 +135,9 @@ class TestSquare(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Square.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
-        self.assertCountEqual(json_dictionary, '[{"x": 2, "size": 10, "id": 2, "y": 8}]')
+        self.assertCountEqual(
+            json_dictionary, '[{"x": 2, "size": 10, "id": 2, "y": 8}]'
+            )
 
     def test_save_to_file(self):
         '''Tests the save_to_file function'''
@@ -154,7 +157,9 @@ class TestSquare(unittest.TestCase):
 
         with open("Square.json", "r") as file:
             self.assertCountEqual(
-                file.read(), '[{"y": 8, "x": 2, "id": 1, "size": 10}, {"y": 0, "x": 0, "id": 2, "size": 2}]'
+                file.read(),
+                '[{"y": 8, "x": 2, "id": 1, "size": 10}, \
+{"y": 0, "x": 0, "id": 2, "size": 2}]'
             )
 
     def test_from_json_string(self):
@@ -199,6 +204,7 @@ class TestSquare(unittest.TestCase):
 
     def tearDown(self):
         Square.del_nb()
+
 
 if __name__ == '__main__':
     unittest.main()

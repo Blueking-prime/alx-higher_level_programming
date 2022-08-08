@@ -122,18 +122,23 @@ class TestRectangle(unittest.TestCase):
         r1.update(x=1, height=2, y=3, width=4, id=89)
         self.assertEqual(r1.__str__(), '[Rectangle] (89) 1/3 - 4/2')
 
-
     def test_to_dictionary(self):
         '''Tests the to_dictionary function with multiple values'''
         r1 = Rectangle(10, 2, 1, 9)
         r1_dictionary = r1.to_dictionary()
-        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        self.assertEqual(
+            r1_dictionary,
+            {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+            )
         self.assertTrue(type(r1_dictionary) is dict)
 
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)
         r2_dictionary = r2.to_dictionary()
-        self.assertEqual(r2_dictionary, {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        self.assertEqual(
+            r2_dictionary,
+            {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+            )
         self.assertNotEqual(r1, r2)
 
     def test_to_json_string_default(self):
@@ -142,7 +147,10 @@ class TestRectangle(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Rectangle.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
-        self.assertCountEqual(json_dictionary, '[{"x": 0, "width": 10, "id": 1, "height": 7, "y": 0}]')
+        self.assertCountEqual(
+            json_dictionary,
+            '[{"x": 0, "width": 10, "id": 1, "height": 7, "y": 0}]'
+            )
 
     def test_to_json_string_full(self):
         '''Tests the to_json_string function'''
@@ -150,7 +158,10 @@ class TestRectangle(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Rectangle.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
-        self.assertCountEqual(json_dictionary, '[{"x": 2, "width": 10, "id": 2, "height": 7, "y": 8}]')
+        self.assertCountEqual(
+            json_dictionary,
+            '[{"x": 2, "width": 10, "id": 2, "height": 7, "y": 8}]'
+            )
 
     def test_save_to_file(self):
         '''Tests the save_to_file function'''
@@ -159,7 +170,8 @@ class TestRectangle(unittest.TestCase):
 
         with open("Rectangle.json", "r") as file:
             self.assertCountEqual(
-                file.read(), '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}]'
+                file.read(),
+                '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}]'
             )
 
     def test_save_to_file_2(self):
@@ -170,7 +182,9 @@ class TestRectangle(unittest.TestCase):
 
         with open("Rectangle.json", "r") as file:
             self.assertCountEqual(
-                file.read(), '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]'
+                file.read(),
+                '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, \
+{"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]'
             )
 
     def test_from_json_string(self):
@@ -210,11 +224,14 @@ class TestRectangle(unittest.TestCase):
         list_rectangles_output = Rectangle.load_from_file()
         i = 0
         for rect in list_rectangles_output:
-            self.assertEqual(list_rectangles_input[i].__str__(), rect.__str__())
+            self.assertEqual(
+                list_rectangles_input[i].__str__(), rect.__str__()
+                )
             i += 1
 
     def tearDown(self):
         Rectangle.del_nb()
+
 
 if __name__ == '__main__':
     unittest.main()

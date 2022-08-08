@@ -29,7 +29,8 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+        return f'[{self.__class__.__name__}] \
+({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
 
     @property
     def width(self):
@@ -115,9 +116,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         '''Returns a dictionary descrription of a class'''
         return {
-            'x':self.x,
-            'y':self.y,
-            'id':self.id,
-            'height':self.height,
-            'width':self.width
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
         }

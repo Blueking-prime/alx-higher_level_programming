@@ -22,7 +22,8 @@ class Square(Rectangle):
         super().__init__(size, size, x=x, y=y, id=id)
 
     def __str__(self):
-        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}'
+        return f'[{self.__class__.__name__}] \
+({self.id}) {self.x}/{self.y} - {self.width}'
 
     @property
     def size(self):
@@ -52,8 +53,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         '''Returns a dictionary descrription of a class'''
         return {
-            'id':self.id,
-            'x':self.x,
-            'size':self.size,
-            'y':self.y,
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y,
         }
