@@ -22,7 +22,10 @@ class TestBase(unittest.TestCase):
         dictionary = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
         json_dictionary = Base.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
-        self.assertEqual(json_dictionary, '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
+        self.assertEqual(
+            json_dictionary,
+            '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
+            )
 
     def test_from_json_string(self):
         '''Tests the from_json_string function'''
@@ -35,6 +38,7 @@ class TestBase(unittest.TestCase):
         self.assertTrue(type(json_list_input) is str)
         self.assertTrue(type(list_output) is list)
         self.assertEqual(list_input, list_output)
+
 
 if __name__ == '__main__':
     unittest.main()
