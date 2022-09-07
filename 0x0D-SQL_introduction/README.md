@@ -1,0 +1,1 @@
+And thus the beginnigs of SQL
