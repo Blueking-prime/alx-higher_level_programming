@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 '''Read cities from database'''
-import MySQLdb
-import sys
-
-usr = sys.argv[1]
-pwd = sys.argv[2]
-dbname = sys.argv[3]
-
 if __name__ == '__main__':
+    import MySQLdb
+    import sys
+
+    usr = sys.argv[1]
+    pwd = sys.argv[2]
+    dbname = sys.argv[3]
+
     db = MySQLdb.connect(
         host='localhost',
         user=usr,
