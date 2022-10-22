@@ -16,7 +16,7 @@ if __name__ == '__main__':
             print('No result')
         id = r.json().get('id')
         name = r.json().get('name')
-    except requests.exceptions.JSONDecodeError:
+    except ValueError:
         print('Not a valid JSON')
     else:
         display_str = f'[{id}] {name}'
