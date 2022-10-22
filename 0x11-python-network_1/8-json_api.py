@@ -6,7 +6,7 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    if sys.argv[1]:
+    if len(sys.argv) > 1:
         value = {'q': sys.argv[1]}
     else:
         value = {'q': ''}
