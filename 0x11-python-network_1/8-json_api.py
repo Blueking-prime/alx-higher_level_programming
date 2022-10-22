@@ -14,10 +14,10 @@ if __name__ == '__main__':
         r = requests.post('http://0.0.0.0:5000/search_user', data=value)
         if r.json() == {}:
             print('No result')
-        key = r.json().keys()[0]
-        key_val = r.json().get(key)
+        id = r.json().get('id')
+        name = r.json().get('name')
     except requests.exceptions.JSONDecodeError:
         print('Not a valid JSON')
     else:
-        display_str = f'[{key}] {key_val}'
+        display_str = f'[{id}] {name}'
         print(display_str)
