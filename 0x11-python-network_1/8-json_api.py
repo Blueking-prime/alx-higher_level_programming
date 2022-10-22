@@ -10,6 +10,7 @@ if __name__ == '__main__':
         value = {'q': sys.argv[1]}
     else:
         value = {'q': ''}
+
     try:
         r = requests.post('http://0.0.0.0:5000/search_user', data=value)
         if r.json() == {}:
@@ -19,5 +20,4 @@ if __name__ == '__main__':
     except ValueError:
         print('Not a valid JSON')
     else:
-        display_str = f'[{id}] {name}'
-        print(display_str)
+        print(f'[{id}] {name}')
