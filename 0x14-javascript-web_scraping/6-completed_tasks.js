@@ -11,16 +11,23 @@ request(url, function (error, response, body) {
 
   const data = JSON.parse(body);
   const result = {};
+  let id = 0;
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].userId === id) {
+      continue;
+    } else {
+      id = data[i].userId;
+    }
     let tasks = 0;
     for (let j = 0; j < data.length; j++) {
-      if (data[j].userId === i && data[j].completed === true) {
+      if (data[j].userId === id && data[j].completed === true) {
         tasks++;
       }
     }
     if (tasks > 0) {
-      result[i] = tasks;
+      result[id] = tasks;
     }
   }
+  console.log(result);
 });
